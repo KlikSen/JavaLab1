@@ -1,7 +1,5 @@
 package Task9;
 
-        import java.awt.geom.QuadCurve2D;
-
 public class CustomDouble {
     private int integer;
     private double fraction;
@@ -36,42 +34,38 @@ public class CustomDouble {
     public CustomDouble plus(final CustomDouble numeric2) {
         final double sum = this.integer + this.fraction + numeric2.integer + numeric2.fraction;
 
-        final CustomDouble numericFinal = new CustomDouble(sum);
-        return numericFinal;
+        return new CustomDouble(sum);
     }
 
     public CustomDouble minus(final CustomDouble numeric2) {
         final double difference = this.integer + this.fraction - (numeric2.integer + numeric2.fraction);
 
-        final CustomDouble numericFinal = new CustomDouble(difference);
-        return numericFinal;
+        return new CustomDouble(difference);
     }
 
     public CustomDouble multiply(final CustomDouble numeric2) {
-        final double difference = (this.integer + this.fraction) * (numeric2.integer + numeric2.fraction);
+        final double result = (this.integer + this.fraction) * (numeric2.integer + numeric2.fraction);
 
-        final CustomDouble numericFinal = new CustomDouble(difference);
-        return numericFinal;
+        return new CustomDouble(result);
     }
 
     public CustomDouble divide(final CustomDouble numeric2) {
-        final double difference = (this.integer + this.fraction) / (numeric2.integer + numeric2.fraction);
+        final double result = (this.integer + this.fraction) / (numeric2.integer + numeric2.fraction);
 
-        final CustomDouble numericFinal = new CustomDouble(difference);
-        return numericFinal;
+        return new CustomDouble(result);
     }
 
-    public boolean comparisonMore(final CustomDouble numeric2) {
+    public boolean isBigger(final CustomDouble numeric2) {
         return this.integer + this.fraction > numeric2.integer + numeric2.fraction;
     }
-    public boolean comparisonMoreEquals(final CustomDouble numeric2) {
+    public boolean isBiggerEquals(final CustomDouble numeric2) {
         return this.integer + this.fraction >= numeric2.integer + numeric2.fraction;
     }
-    public boolean comparisonLess(final CustomDouble numeric2) {
-        return !this.comparisonMoreEquals(numeric2);
+    public boolean isLess(final CustomDouble numeric2) {
+        return !this.isBiggerEquals(numeric2);
     }
-    public boolean comparisonLessEquals(final CustomDouble numeric2) {
-        return !this.comparisonMore(numeric2);
+    public boolean isLessEquals(final CustomDouble numeric2) {
+        return !this.isBigger(numeric2);
     }
 
     @Override
@@ -93,4 +87,3 @@ public class CustomDouble {
 
     public Double toDouble() { return integer + fraction; }
 }
-

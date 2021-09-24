@@ -4,10 +4,7 @@ public class Driver {
     private String name;
     private String phoneNumber;
 
-    public Driver() {
-        this.name = "Ivan";
-        this.phoneNumber = "+380931122333";
-    }
+    public Driver() {}
 
     public Driver(final String name, final String phoneNumber) {
         this.name = name;

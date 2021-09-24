@@ -23,8 +23,10 @@ public class Main {
     }
 
     static int[][] multiplyMatrix(final int[][] arrayA, final int[][] arrayB) {
-        final int rowsA = arrayA.length, colsA = arrayA[0].length,
-                rowsB = arrayB.length, colsB = arrayB[0].length;
+        final int rowsA = arrayA.length;
+        final int colsA = arrayA[0].length;
+        final int rowsB = arrayB.length;
+        final int colsB = arrayB[0].length;
 
         final int[][] arrayC = new int[rowsA][];
 

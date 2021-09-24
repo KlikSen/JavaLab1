@@ -1,17 +1,10 @@
 package Task11;
 
-import Task9.CustomDouble;
-
-import java.util.Objects;
-
 public class Car {
     private String brand;
     private String licensePlate;
 
-    public Car() {
-        this.brand = "Mercedes";
-        this.licensePlate = "AA1002MH";
-    }
+    public Car() {}
 
     public Car(final String brand, final String licensePlate) {
         this.brand = brand;

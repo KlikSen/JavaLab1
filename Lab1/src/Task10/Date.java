@@ -7,22 +7,14 @@ public class Date {
     private int month;
     private int year;
 
+    public static final int minDaysInMonth = 1;
+    public static final int maxDaysInMonth = 31;
+    public static final int minMonthsInYear = 1;
+    public static final int maxMonthsInYear = 12;
+
+
     public Date() {
-        final Scanner reader = new Scanner(System.in);
-
-        System.out.println("Impute date: ");
-        do {
-            System.out.println("day: ");
-            this.day = reader.nextInt();
-        } while (this.day < 1 || this.day > 31);
-
-        do {
-            System.out.println("month: ");
-            this.month = reader.nextInt();
-        } while (this.month < 1 || this.month > 12);
-
-        System.out.println("year: ");
-        this.year = reader.nextInt();
+        setDate();
     }
 
     public Date(final Date date) {
@@ -55,17 +47,42 @@ public class Date {
 
     public void setYear(final int year) { this.year = year; }
 
-    public void convert() {
-        final boolean notCorrectDate = (this.day < 1 || this.day > 31) || (this.month < 1 || this.month > 12);
+    public void setDate() {
+        final Scanner reader = new Scanner(System.in);
+
+//        int day = 0;
+//        int month = 0;
+//        int year = 0;
+
+        System.out.println("Impute date: ");
         do {
-            if (day > 31) {
-                day -= 31;
-                month++;
+            System.out.println("day: ");
+            this.day = reader.nextInt();
+        } while (this.day < minDaysInMonth || this.day > maxDaysInMonth);
+
+        do {
+            System.out.println("month: ");
+            this.month = reader.nextInt();
+        } while (this.month < minMonthsInYear || this.month > maxMonthsInYear);
+
+        System.out.println("year: ");
+        year = reader.nextInt();
+
+       // new Date(day, month, year);
+    }
+
+    private void convert() {
+        boolean notCorrectDate = this.day > maxDaysInMonth || this.month > maxMonthsInYear;
+        do {
+            if (this.day > 31) {
+                this.day -= 31;
+                this.month++;
             }
-            if (month > 12) {
-                month -= 12;
-                year++;
+            if (this.month > 12) {
+                this.month -= 12;
+                this.year++;
             }
+            notCorrectDate = this.day > maxDaysInMonth || this.month > maxMonthsInYear;
         } while (notCorrectDate);
     }
 

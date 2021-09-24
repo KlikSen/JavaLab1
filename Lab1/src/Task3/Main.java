@@ -5,11 +5,11 @@ public class Main {
 
         final int[] arrayOfInts = {1, 2, 3, 4, 7,3,2,2};
         final char[] arrayOfChars = {'d', 'g', 'y', 'h'};
-        final String stringOfTwoArrays = connectTwoArrays(arrayOfInts, arrayOfChars);
+        final String stringOfTwoArrays = combineTwoArrays(arrayOfInts, arrayOfChars);
 
             System.out.println(stringOfTwoArrays);
         }
-        static String connectTwoArrays (final int[] arrayOfInts,final  char[] arrayOfChars){
+        static String combineTwoArrays(final int[] arrayOfInts, final  char[] arrayOfChars){
             final StringBuilder stringOfTwoArrays = new StringBuilder();
 
             for (int i = 0; i < arrayOfInts.length; i++) {

@@ -1,5 +1,7 @@
 package Task9;
 
+import Task8.CustomDouble;
+
 import java.util.Scanner;
 
 public class Calculator {
@@ -70,10 +72,8 @@ public class Calculator {
         } else {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
-            final CustomDouble doubleResult;
 
-            doubleResult = doubleNumeric1.plus(doubleNumeric2);
-            System.out.println(doubleResult.toDouble());
+            System.out.println(doubleNumeric1.plus(doubleNumeric2).toDouble());
         }
     }
 
@@ -84,10 +84,8 @@ public class Calculator {
         } else {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
-            final CustomDouble doubleResult;
 
-            doubleResult = doubleNumeric1.minus(doubleNumeric2);
-            System.out.println(doubleResult.toDouble());
+            System.out.println(doubleNumeric1.minus(doubleNumeric2).toDouble());
         }
     }
 
@@ -98,10 +96,8 @@ public class Calculator {
         } else {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
-            final CustomDouble doubleResult;
 
-            doubleResult = doubleNumeric1.multiply(doubleNumeric2);
-            System.out.println(doubleResult.toDouble());
+            System.out.println(doubleNumeric1.multiply(doubleNumeric2).toDouble());
         }
     }
 
@@ -112,10 +108,8 @@ public class Calculator {
         } else {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
-            final CustomDouble doubleResult;
 
-            doubleResult = doubleNumeric1.divide(doubleNumeric2);
-            System.out.println(doubleResult.toDouble());
+            System.out.println(doubleNumeric1.divide(doubleNumeric2).toDouble());
         }
     }
 
@@ -151,7 +145,7 @@ public class Calculator {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
 
-            System.out.println(doubleNumeric1.comparisonMore(doubleNumeric2));
+            System.out.println(doubleNumeric1.isBigger(doubleNumeric2));
         }
     }
 
@@ -163,7 +157,7 @@ public class Calculator {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
 
-            System.out.println(doubleNumeric1.comparisonMoreEquals(doubleNumeric2));
+            System.out.println(doubleNumeric1.isBiggerEquals(doubleNumeric2));
         }
     }
 
@@ -175,7 +169,7 @@ public class Calculator {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
 
-            System.out.println(doubleNumeric1.comparisonLess(doubleNumeric2));
+            System.out.println(doubleNumeric1.isLess(doubleNumeric2));
         }
     }
 
@@ -187,7 +181,7 @@ public class Calculator {
             final CustomDouble doubleNumeric1 = new CustomDouble(numeric1);
             final CustomDouble doubleNumeric2 = new CustomDouble(numeric2);
 
-            System.out.println(doubleNumeric1.comparisonLessEquals(doubleNumeric2));
+            System.out.println(doubleNumeric1.isLess(doubleNumeric2));
         }
     }
 }

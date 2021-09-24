@@ -6,12 +6,7 @@ public class Taxi extends Car {
     private Driver[] drivers;
     private String taxiPhoneNumber;
 
-    public Taxi() {
-        super();
-        this.drivers = new Driver[1];
-        drivers[0] = new Driver();
-        this.taxiPhoneNumber = "888";
-    }
+    public Taxi() {}
 
     public Taxi(final String brand, final String licensePlate, final Driver[] drivers, final String taxiNumber) {
         super(brand, licensePlate);

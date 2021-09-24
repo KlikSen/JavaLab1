@@ -8,32 +8,16 @@ public class Weather {
     private int speedOfWind;
     private int temperature;
 
+    public static final int minCloudiness = 1;
+    public static final int maxCloudiness = 10;
+    public static final String[] precipitations = {"snow", "hail", "rain", "not"};
+    public static final int minSpeedOfWind = 1;
+    public static final int maxSpeedOfWind = 30;
+    public static final int minTemperature = -50;
+    public static final int maxTemperature = 50;
+
     public Weather() {
-        final Scanner reader = new Scanner(System.in);
-        boolean somePrecipitation;
-
-        do {
-            System.out.println("Impute cloudiness from 1 to 10: ");
-            this.cloudiness = reader.nextInt();
-        } while (this.cloudiness < 1 || this.cloudiness > 10);
-
-        do {
-            System.out.println("Impute type of precipitation (snow, hail, rain, not): ");
-            this.precipitation = reader.next();
-            somePrecipitation = (this.precipitation.equals("snow")) ||
-                    (this.precipitation.equals("hail")) || (this.getPrecipitation().equals("rain")) ||
-                    (this.precipitation.equals("not"));
-        } while (!somePrecipitation);
-
-        do {
-            System.out.println("Impute speed of wind: ");
-            this.speedOfWind = reader.nextInt();
-        } while (this.speedOfWind < 1 || this.speedOfWind > 30);
-
-        do {
-            System.out.println("Impute temperature: ");
-            this.temperature = reader.nextInt();
-        } while (this.temperature < -50 || this.temperature > 50);
+        setWeather();
     };
 
     public Weather(final int cloudiness, final String precipitation,
@@ -66,6 +50,45 @@ public class Weather {
 
     public void setTemperature(final int temperature) {
         this.temperature = temperature;
+    }
+
+    public void setWeather() {
+        final Scanner reader = new Scanner(System.in);
+        boolean somePrecipitation = false;
+//        int cloudiness = 0;
+//        String precipitation = "";
+//        int speedOfWind = 0;
+//        int temperature = -100;
+
+        do {
+            System.out.println("Impute cloudiness from 1 to 10: ");
+            this.cloudiness = reader.nextInt();
+        } while (this.cloudiness < minCloudiness || this.cloudiness > maxCloudiness);
+
+        do {
+            System.out.println("Impute type of precipitation (snow, hail, rain, not): ");
+            this.precipitation = reader.next();
+
+            for (final String oneOfPrecipitation : precipitations){
+                if (this.precipitation.equals(oneOfPrecipitation))
+                    somePrecipitation = true;
+            }
+//            somePrecipitation = (this.precipitation.equals("snow")) ||
+//                    (this.precipitation.equals("hail")) || (this.getPrecipitation().equals("rain")) ||
+//                    (this.precipitation.equals("not"));
+        } while (!somePrecipitation);
+
+        do {
+            System.out.println("Impute speed of wind: ");
+            this.speedOfWind = reader.nextInt();
+        } while (this.speedOfWind < minSpeedOfWind || this.speedOfWind > maxSpeedOfWind);
+
+        do {
+            System.out.println("Impute temperature: ");
+            this.temperature = reader.nextInt();
+        } while (this.temperature < minTemperature || this.temperature > maxTemperature);
+
+  //      new Weather(cloudiness, precipitation, speedOfWind, temperature);
     }
 
     @Override

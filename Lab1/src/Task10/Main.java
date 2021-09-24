@@ -8,7 +8,7 @@ public class Main {
         for (int i = 1; i < weatherCalendarForTheWeek.length; i++){
             final Date nextDay = new Date(weatherCalendarForTheWeek[0].getDate());
             nextDay.setDay(nextDay.getDay() + i);
-//geter seter
+
             weatherCalendarForTheWeek[i] = new Day(nextDay);
         }
 

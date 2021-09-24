@@ -15,7 +15,9 @@ public class Main {
     }
 
     static int[][] transMatrix(final int[][] array) {
-        final int rows = array.length, cols = array[0].length; // новий рядок нова змінна
+        final int rows = array.length;
+        final int cols = array[0].length;
+
         final int[][] transArray = new int[cols][];
         for (int i = 0; i < cols; i++) {
             transArray[i] = new int[rows];

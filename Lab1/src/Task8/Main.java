@@ -12,7 +12,7 @@ public class Main {
         System.out.println("numeric2 = " + numeric2.toDouble());
         System.out.println("numeric1 + numeric2 = " + numericSum.toDouble());
         System.out.println("numeric1 - numeric2 = " + numericDifference.toDouble());
-        System.out.println("numeric1 > numeric2 = " + numeric1.comparisonMore(numeric2));
+        System.out.println("numeric1 > numeric2 = " + numeric1.isBigger(numeric2));
         System.out.println("numeric1.equals(numeric2): " + numeric1.equals(numeric2));
     }
     }

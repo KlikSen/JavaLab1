@@ -6,12 +6,7 @@ public class Order {
     private int price;
     private int minutes;
 
-    public Order() {
-        this.taxi = new Taxi();
-        this.id = 101;
-        this.price = 60;
-        this.minutes = 15;
-    }
+    public Order() {}
 
     public Order(final Taxi taxi,final int id, final int price, final int minutes) {
         this.taxi = taxi;
